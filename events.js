@@ -10,7 +10,7 @@ function start () {
   // Your turn! Create a new function called `two`, then call it from here.
   two()
   three()
-
+  four()
 }
 
 function one () {
@@ -35,9 +35,20 @@ function three () {
   three.addEventListener('mouseenter', makeOrange)
   three.addEventListener('mouseleave', makeWhite)
 }
-// CREATE FUNCTION three HERE
 
-// CREATE FUNCTION four HERE
+function four () {
+  var four = document.getElementById('four')
+  four.addEventListener('click', toggleP)
+}
+
+function toggleP (evt) {
+  if (evt.target.style.backgroundColor == 'pink') {
+    makeWhite (evt) 
+  }
+  else {
+    makePink (evt)
+  }
+}
 
 // Changes the background color of event's target
 function makeBlue (evt) {
@@ -54,4 +65,8 @@ function makeGreen (evt) {
 
 function makeOrange (evt) {
   evt.target.style.backgroundColor = 'orange'
+}
+
+function makePink (evt) {
+  evt.target.style.backgroundColor = 'pink'
 }
